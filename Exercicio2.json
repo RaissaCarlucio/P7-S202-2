@@ -1,0 +1,35 @@
+[
+    {
+        "Aula1": {
+            "Professor": "Renan",
+            "Assunto": "Logaritmo",
+            "listaDeAlunos": [
+                {"nome": "Raissa"},
+                {"nome": "Guilherme"},
+                {"nome": "Leonardo"}
+            ]
+        }
+    },
+    {
+        "Aula2": {
+            "Professor": "Renzo",
+            "Assunto": "Banco de Dados1",
+            "listaDeAlunos": [
+                {"nome": "Adrian"},
+                {"nome": "Marco"},
+                {"nome": "José"}
+            ]
+        }
+    },
+    {
+        "Aula3": {
+            "Professor": "Natan",
+            "Assunto": "Calculo 1",
+            "listaDeAlunos": [
+                {"nome": "Pedro"},
+                {"nome": "Kaique"},
+                {"nome": "Rodrigo"}
+            ]
+        }
+    }
+]

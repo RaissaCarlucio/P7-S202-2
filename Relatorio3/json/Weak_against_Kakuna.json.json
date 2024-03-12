@@ -1,0 +1,178 @@
+[
+    {
+        "_id": {
+            "$oid": "65ef569ae81c30e1ae8fd0d7"
+        },
+        "id": 46,
+        "num": "046",
+        "name": "Paras",
+        "img": "http://www.serebii.net/pokemongo/pokemon/046.png",
+        "type": [
+            "Bug",
+            "Grass"
+        ],
+        "height": "0.30 m",
+        "weight": "5.4 kg",
+        "candy": "Paras Candy",
+        "candy_count": 50,
+        "egg": "5 km",
+        "spawn_chance": 2.36,
+        "avg_spawns": 236,
+        "spawn_time": "01:42",
+        "multipliers": [
+            2.02
+        ],
+        "weaknesses": [
+            "Fire",
+            "Ice",
+            "Poison",
+            "Flying",
+            "Bug",
+            "Rock"
+        ],
+        "next_evolution": [
+            {
+                "num": "047",
+                "name": "Parasect"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65ef569ae81c30e1ae8fd0d8"
+        },
+        "id": 47,
+        "num": "047",
+        "name": "Parasect",
+        "img": "http://www.serebii.net/pokemongo/pokemon/047.png",
+        "type": [
+            "Bug",
+            "Grass"
+        ],
+        "height": "0.99 m",
+        "weight": "29.5 kg",
+        "candy": "Paras Candy",
+        "egg": "Not in Eggs",
+        "spawn_chance": 0.074,
+        "avg_spawns": 7.4,
+        "spawn_time": "01:22",
+        "multipliers": null,
+        "weaknesses": [
+            "Fire",
+            "Ice",
+            "Poison",
+            "Flying",
+            "Bug",
+            "Rock"
+        ],
+        "prev_evolution": [
+            {
+                "num": "046",
+                "name": "Paras"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65ef569ae81c30e1ae8fd10f"
+        },
+        "id": 102,
+        "num": "102",
+        "name": "Exeggcute",
+        "img": "http://www.serebii.net/pokemongo/pokemon/102.png",
+        "type": [
+            "Grass",
+            "Psychic"
+        ],
+        "height": "0.41 m",
+        "weight": "2.5 kg",
+        "candy": "Exeggcute Candy",
+        "candy_count": 50,
+        "egg": "5 km",
+        "spawn_chance": 0.78,
+        "avg_spawns": 78,
+        "spawn_time": "09:09",
+        "multipliers": [
+            2.7,
+            3.18
+        ],
+        "weaknesses": [
+            "Fire",
+            "Ice",
+            "Poison",
+            "Flying",
+            "Bug",
+            "Ghost",
+            "Dark"
+        ],
+        "next_evolution": [
+            {
+                "num": "103",
+                "name": "Exeggutor"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65ef569ae81c30e1ae8fd110"
+        },
+        "id": 103,
+        "num": "103",
+        "name": "Exeggutor",
+        "img": "http://www.serebii.net/pokemongo/pokemon/103.png",
+        "type": [
+            "Grass",
+            "Psychic"
+        ],
+        "height": "2.01 m",
+        "weight": "120.0 kg",
+        "candy": "Exeggcute Candy",
+        "egg": "Not in Eggs",
+        "spawn_chance": 0.014,
+        "avg_spawns": 1.4,
+        "spawn_time": "12:34",
+        "multipliers": null,
+        "weaknesses": [
+            "Fire",
+            "Ice",
+            "Poison",
+            "Flying",
+            "Bug",
+            "Ghost",
+            "Dark"
+        ],
+        "prev_evolution": [
+            {
+                "num": "102",
+                "name": "Exeggcute"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "65ef569ae81c30e1ae8fd11b"
+        },
+        "id": 114,
+        "num": "114",
+        "name": "Tangela",
+        "img": "http://www.serebii.net/pokemongo/pokemon/114.png",
+        "type": [
+            "Grass"
+        ],
+        "height": "0.99 m",
+        "weight": "35.0 kg",
+        "candy": "None",
+        "egg": "5 km",
+        "spawn_chance": 0.228,
+        "avg_spawns": 22.8,
+        "spawn_time": "23:13",
+        "multipliers": null,
+        "weaknesses": [
+            "Fire",
+            "Ice",
+            "Poison",
+            "Flying",
+            "Bug"
+        ]
+    }
+]
