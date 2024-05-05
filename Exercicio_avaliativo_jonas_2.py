@@ -1,6 +1,7 @@
 from neo4j import GraphDatabase
 from neo4j.exceptions import ServiceUnavailable
 
+
 def create_and_return_example(tx, code, test_data):
     query = """
         CREATE (n:TEST {

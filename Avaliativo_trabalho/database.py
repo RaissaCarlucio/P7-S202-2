@@ -22,7 +22,6 @@ class Database:
     def resetDatabase(self):
         try:
             self.db.drop_collection(self.collection)
-            self.collection.insert_many(dataset)
             print("Banco de dados resetado com sucesso!")
         except Exception as e:
             print(e)

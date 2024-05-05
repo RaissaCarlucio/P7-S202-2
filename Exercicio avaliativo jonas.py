@@ -3,6 +3,25 @@ import time
 import random
 from pymongo import MongoClient
 
+# # Abrindo uma conexao com o server do mongdb
+# client = MongoClient('mongodb://localhost:27017')
+
+# # Indicar qual schema eu quero acessar
+# db = client['Inatel']
+
+# #Indicando qual collection eu desejo acessar
+# paises = db.Countries
+
+
+# result = paises.find(
+# )
+
+
+# import pprint
+# for aux in result:
+#     pprint.pprint(aux)
+
+
 # Função para verificar se o sensor está alarmado
 def verificarAlarme(sensor):
     client = MongoClient('localhost', 27017)
