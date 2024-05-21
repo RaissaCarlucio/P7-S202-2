@@ -30,7 +30,7 @@ class FutebolDatabase:
         query = "MATCH (m:Match) RETURN m.id AS MatchId, m.result AS result"
         results = self.db.execute_query(query)
         return [(result["MatchId"], result["result"]) for result in results]
-    
+       
     #-----------------------------------------
 
     def update_player(self, old_name, new_name):
