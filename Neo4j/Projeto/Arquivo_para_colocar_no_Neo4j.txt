@@ -1,0 +1,58 @@
+
+CREATE (:Player {name: 'Adrian', level: 7})
+CREATE (:Player {name: 'Raissa', level: 4})
+CREATE (:Player {name: 'Miguel', level: 2})
+
+
+
+MATCH (p:Player {name: 'Adrian'})
+CREATE (c:Character {name: 'sett', class: 'Lutador'})
+CREATE (p)-[:PERTENCE_NO_RPG]->(c)
+
+
+MATCH (p:Player {name: 'Raissa'})
+CREATE (c:Character {name: 'Xayah', class: 'Atiradora'})
+CREATE (p)-[:PERTENCE_NO_RPG]->(c)
+
+MATCH (p:Player {name: 'Miguel'})
+CREATE (c:Character {name: 'Thresh', class: 'Lutador'})
+CREATE (p)-[:PERTENCE_NO_RPG]->(c)
+
+
+
+CREATE (:City {name: 'City of Orcs'})
+CREATE (:City {name: 'City of Dragons'})
+CREATE (:City {name: 'City of Dwarves'})
+CREATE (:City {name: 'City of Fairies'})
+CREATE (:City {name: 'City of Humans'})
+
+CREATE (:Enemy {name: 'Orc Boss', level: 20})
+CREATE (:Enemy {name: 'Dwarf Boss', level: 30})
+CREATE (:Enemy {name: 'Fairy Boss', level: 40})
+CREATE (:Enemy {name: 'Dragon Boss', level: 50})
+
+
+MATCH (p:Player {name: 'Adrian'}), (c:City {name: 'City of Humans'})
+CREATE (p)-[:NASCEU_EM]->(c)
+
+
+MATCH (p:Player {name: 'Raissa'}), (c:City {name: 'City of Humans'})
+CREATE (p)-[:NASCEU_EM]->(c)
+
+MATCH (p:Player {name: 'Miguel'}), (c:City {name: 'City of Humans'})
+CREATE (p)-[:NASCEU_EM]->(c)
+
+
+MATCH (e:Enemy {name: 'Orc Boss'}), (c:City {name: 'City of Orcs'})
+CREATE (e)-[:RESIDE_EM]->(c)
+
+
+MATCH (e:Enemy {name: 'Dwarf Boss'}), (c:City {name: 'City of Dwarves'})
+CREATE (e)-[:RESIDE_EM]->(c)
+
+MATCH (e:Enemy {name: 'Fairy Boss'}), (c:City {name: 'City of Fairies'})
+CREATE (e)-[:RESIDE_EM]->(c)
+
+MATCH (e:Enemy {name: 'Dragon Boss'}), (c:City {name: 'City of Dragons'})
+CREATE (e)-[:RESIDE_EM]->(c)
+
