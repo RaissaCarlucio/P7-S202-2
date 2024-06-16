@@ -3,8 +3,6 @@ CREATE (:Player {name: 'Adrian', level: 7})
 CREATE (:Player {name: 'Raissa', level: 4})
 CREATE (:Player {name: 'Miguel', level: 2})
 
-
-
 MATCH (p:Player {name: 'Adrian'})
 CREATE (c:Character {name: 'sett', class: 'Lutador'})
 CREATE (p)-[:PERTENCE_NO_RPG]->(c)
@@ -17,7 +15,6 @@ CREATE (p)-[:PERTENCE_NO_RPG]->(c)
 MATCH (p:Player {name: 'Miguel'})
 CREATE (c:Character {name: 'Thresh', class: 'Lutador'})
 CREATE (p)-[:PERTENCE_NO_RPG]->(c)
-
 
 
 CREATE (:City {name: 'City of Orcs'})

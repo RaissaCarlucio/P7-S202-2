@@ -2,12 +2,14 @@ class PlayerCRUD:
     def __init__(self, database):
         self.db = database
 
-    def create(self, name, level, city):  # cria um Jogador com seu nome, seu nível e sua cidade
+    # Cria um jogador com seu nome, nivel e cidade
+    def create(self, name, level, city):  
         query = "CREATE (:Player{name: $name, level: $level, city: $city})"
         parameters = {"name": name, "level": level, "city": city}
         self.db.execute_query(query, parameters)
 
-    def read(self, name):  # Lendo o jogador
+    # Lendo o jogador
+    def read(self, name):  
         query = """
         MATCH (p:Player {name: $name}) 
         RETURN p.name AS name, p.level AS level, p.city AS city"""
@@ -15,7 +17,8 @@ class PlayerCRUD:
         results = self.db.execute_query(query, parameters)
         return results[0] if results else None
 
-    def delete(self, name):  # deleta um Jogador pelo seu nome
+    # Deletando um jogador
+    def delete(self, name):  
         query = """
         MATCH (p:Player {name: $name})
         DELETE p
@@ -23,7 +26,8 @@ class PlayerCRUD:
         parameters = {"name": name}
         self.db.execute_query(query, parameters)
         
-    def update(self, name, new_level):  # Atualiza o nível do jogador
+    # Atualiza o nivel do jogador    
+    def update(self, name, new_level):  
         query = """
         MATCH (p:Player{name: $name})
         SET p.level = $new_level

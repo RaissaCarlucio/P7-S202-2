@@ -5,7 +5,7 @@ class Character_query:
     def __init__(self, database):
         self.db = database
 
-        # Buscando personagens do jogador Adrian
+    # Buscando personagens do jogador Adrian
     def get_characters_by_player(self):
         query = """
         MATCH (p:Player {name: 'Adrian'})-[:PERTENCE_NO_RPG]->(c:Character)
@@ -14,6 +14,7 @@ class Character_query:
         results = self.db.execute_query(query)
         return [(result['character_name'], result['character_class']) for result in results]
 
+    # Buscando o nome do jogador, da classe e do personagem a partir da classe.
     def get_characters_by_class(self, character_class):
         query = """
         MATCH (p:Player)-[:PERTENCE_NO_RPG]->(c:Character {class: $character_class})

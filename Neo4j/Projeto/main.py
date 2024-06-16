@@ -6,24 +6,23 @@ from query import Query
 from cli import CLI
 
 # Cria uma instância da classe Database, passando os dados de conexão com o banco de dados Neo4j
-db = Database("bolt://44.202.28.32:7687", "neo4j",
-              "spacers-rhythms-electrolytes")
+db = Database("bolt://44.202.28.32:7687", "neo4j", "spacers-rhythms-electrolytes")
 
-# Criando uma instância da classe TeacherCRUD para interagir com o banco de dados
+# Criando as instancias da classe para auxiliar no codigo
 player_crud = PlayerCRUD(db)
 character_crud = CharacterCRUD(db)
 query = Query(db)
 query_character = Character_query(db)
 
 
-# Chamando o método para obter jogadores e personagens
+# Chamando os metodos:
+
 # Lista de nomes dos jogadores
 player_names = ["Adrian", "Raissa", "Miguel"]
 
-# Exemplo de utilização: buscando informações sobre os personagens dos jogadores
+# Buscando o nome do personagem e nome da classe a partir do nome do jogador
 results = query.get_player_characters(player_names)
 
-# Exibindo o resultado da consulta
 for result in results:
      print(f"Informações sobre o personagem de {result['playerName']}:")
      print(f"Nome do personagem: {result['characterName']}")
@@ -31,8 +30,8 @@ for result in results:
      print()
 
 
-print("Buscar o nome dos personagens que nasceram na cidade dos humanos:",
-      query.get_players_born_in_city("City of Humans"))
+# Utilizando a classe query: 
+print("Buscar o nome dos personagens que nasceram na cidade dos humanos:", query.get_players_born_in_city("City of Humans"))
 print("\n")
 
 print("Buscando as cidades em que os viloes estao:", query.get_enemy_cities())
@@ -50,8 +49,6 @@ print("\n")
 
 
 # Utilizando a classe character_crud:
-
-
 print("Personagens e classe do jogador Adrian: ",  query_character.get_characters_by_player())
 print("\n")
 

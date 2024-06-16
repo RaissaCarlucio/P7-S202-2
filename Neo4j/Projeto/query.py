@@ -7,6 +7,7 @@ class Query:
 
 # ------------- Buscando as coisas que estao nos arquivos de texto  -------------
 
+    # Buscando o nome do personagem e nome da classe a partir do nome do jogador
     def get_player_characters(self, player_names):
         results = []
         for player_name in player_names:
@@ -20,7 +21,7 @@ class Query:
             results.extend(result)
 
         return results
-    # Buscar o nome dos personagens que nasceram na cidade dos humanos
+    # Buscando o nome dos personagens que nasceram na cidade dos humanos
     def get_players_born_in_city(self, city_name):
         query = """
         MATCH (p:Player)-[:NASCEU_EM]->(c:City{name: $city_name})
