@@ -1,0 +1,71 @@
+- Criando a Tabela sensor
+CREATE TABLE sensor(
+id BIGINT,
+ano INT,
+mes INT,
+dia INT,
+hora TEXT,
+leitura FLOAT,
+PRIMARY KEY((id,ano,mes),dia,hora)
+);
+
+- Adicionando itens na tabela sensor 
+ALTER TABLE sensor ADD local TEXT;
+
+- Para ver como a tabela esta:
+DESCRIBE sensor ou: SELECT * from sensor;
+SELECT * FROM transacoes LIMIT 100;
+SELECT * FROM transacoes WHERE cliente_id = 12345 AND ano_mes = '202306';
+
+
+
+
+- Inserção Completa
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura,local,modelo)
+VALUES(25,2021,5,10,'18:30',35,'SRS','TexasTemp1');
+
+- Inserção Parcial
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura)
+VALUES(72,2021,5,10,'19:00',27);
+
+- Inserindo com Lista
+ALTER TABLE sensor ADD obs LIST <text>;
+
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura,obs)
+VALUES(72,2021,5,10,'19:00',29,['Valor estavel','Sem delay na leitura']);
+
+- Inserindo com Mapa
+
+ALTER TABLE sensor ADD limites MAP<text,decimal>;
+
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura,obs,limites)
+VALUES(72,2021,5,10,'19:00',29,['Valor estavel','Sem delay na
+leitura'],{'Superior':38,'Inferior':25});
+
+- Update em um sensor
+UPDATE sensor
+SET modelo = 'BuffaloMoist1', local = 'PA'
+WHERE id = 72 AND ano = 2021 AND mes = 5 AND dia = 10 AND hora = '19:00';
+
+- Buscando dados
+SELECT local,leitura
+FROM sensor
+WHERE id = 72 and ano = 2021 and mes = 5 and dia = 10 and hora = '19:00';
+
+- Podemos forcar o Cassandra a fazer buscas:
+SELECT local, leitura
+FROM sensor
+WHERE leitura > 28 ALLOW FILTERING;
+
+- Utilizando o consistency all:
+O nível de consistência ALL garante que todas as réplicas devem responder para que a operação seja considerada bem-sucedida.
+CONSISTENCY ALL;
+SELECT * FROM transacoes WHERE cliente_id = 12345 AND ano_mes = '202306';
+
+- Utilizando o consistency one: 
+CONSISTENCY ONE;
+SELECT * FROM transacoes WHERE cliente_id = 12345 AND ano_mes = '202306';
+
+- Utilizando o consistency quorum:
+CONSISTENCY QUORUM;
+SELECT * FROM transacoes WHERE cliente_id = 12345 AND ano_mes = '202306';

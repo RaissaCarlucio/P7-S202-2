@@ -24,14 +24,14 @@ player_names = ["Adrian", "Raissa", "Miguel"]
 results = query.get_player_characters(player_names)
 
 for result in results:
-     print(f"Informações sobre o personagem de {result['playerName']}:")
+     print(f"Informações sobre o jogador de {result['playerName']}:")
      print(f"Nome do personagem: {result['characterName']}")
      print(f"Classe do personagem: {result['characterClass']}")
      print()
 
 
 # Utilizando a classe query: 
-print("Buscar o nome dos personagens que nasceram na cidade dos humanos:", query.get_players_born_in_city("City of Humans"))
+print("Buscar o nome dos Jogadores que nasceram na cidade dos humanos:", query.get_players_born_in_city("City of Humans"))
 print("\n")
 
 print("Buscando as cidades em que os viloes estao:", query.get_enemy_cities())
@@ -77,12 +77,12 @@ character_crud.update("Katarina", "Mago")
 jogador_read = player_crud.read("Emilia")
 print(jogador_read)
 
-# # Lendo o personagem Zed
+
 personagem_read = character_crud.read("Katarina")
 print(personagem_read)
 
 # Excluindo o personagem
-# character_crud.delete("Zed")
+# character_crud.delete("Katarina")
 
 # Realizando o CLI para criar, ler, dar update e deletar um professor da escolha do usuario:
 if __name__ == "__main__":

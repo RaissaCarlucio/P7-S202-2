@@ -1,0 +1,50 @@
+
+CREATE TABLE sensor(
+id BIGINT,
+ano INT,
+mes INT,
+dia INT,
+hora TEXT,
+leitura FLOAT,
+PRIMARY KEY((id,ano,mes),dia,hora)
+);
+
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura,local,modelo)
+VALUES(25,2021,5,10,'18:30',35,'SRS','TexasTemp1');
+
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura)
+VALUES(72,2021,5,10,'19:00',27);
+
+ALTER TABLE sensor ADD obs LIST <text>;
+
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura,obs)
+VALUES(72,2021,5,10,'19:00',29,['Valor estavel','Sem delay na leitura']);
+
+ALTER TABLE sensor ADD limites MAP<text,decimal>;
+
+INSERT INTO sensor(id,ano,mes,dia,hora,leitura,obs,limites)
+VALUES(72,2021,5,10,'19:00',29,['Valor estavel','Sem delay na
+leitura'],{'Superior':38,'Inferior':25});
+
+1 ---------------------
+INSERT INTO sensor (id, ano, mes, dia, hora, leitura, local, modelo)
+VALUES (25, 2021, 5, 10, '19:00', 37, 'SRS', 'TexasTemp1');
+
+2 ---------------------
+INSERT INTO sensor (id, ano, mes, dia, hora, leitura, local, modelo)
+VALUES (25, 2021, 5, 11, '18:30', 36, 'SRS', 'TexasTemp1');
+
+3 ---------------------
+UPDATE sensor
+SET local = 'SRS', modelo = 'TexasTemp1'
+WHERE id = 25 AND ano = 2021 AND mes = 5 AND dia = 11 AND hora = '18:30';
+
+4  ---------------------
+SELECT modelo, dia, hora, leitura
+FROM sensor
+WHERE id=25 AND ano=2021 AND mes=5 AND dia IN (10,11);
+
+5 ----------------------
+SELECT *
+FROM sensor
+WHERE id=25 AND ano=2021 AND mes=5 AND dia=10 AND hora>='18:30'
